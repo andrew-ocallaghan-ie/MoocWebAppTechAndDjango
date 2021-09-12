@@ -14,7 +14,7 @@ by many nodes across the internet.
 IP - Network Layer (3)
 Recall two distant nodes communicate using IP (internet protocol). 
 - routing algorithm is used to build a forwarding table on each node in the network. 
-- The forwarding tables map ip-ranges their neighbouring nodes so they know where to best redirect messages.
+- The forwarding tables map ip-ranges their neighboring nodes so they know where to best redirect messages.
 
 TCP - Transport Layer (4)
 The connection between source and dest in a socket is setup and torn down via TCP (which uses IP).
@@ -73,7 +73,7 @@ def browser(protocol='http', protocol_version='1.0', host='', document=''):
 
     base_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     base_socket.settimeout(2)
-    browser_socket =  ssl.wrap_socket(base_socket) if protocol is 'https' else base_socket
+    browser_socket =  ssl.wrap_socket(base_socket) if protocol == 'https' else base_socket
 
     port = 443 if protocol == 'https' else 80
     address = (host, port)
