@@ -14,7 +14,7 @@ by many nodes across the internet.
 IP - Network Layer (3)
 Recall two distant nodes communicate using IP (internet protocol). 
 - routing algorithm is used to build a forwarding table on each node in the network. 
-- The forwarding tables map ip-ranges their neighburing nodes so they know where to best redirect messages.
+- The forwarding tables map ip-ranges their neighboring nodes so they know where to best redirect messages.
 
 TCP - Transport Layer (4)
 The connection between source and dest in a socket is setup and torn down via TCP (which uses IP).
