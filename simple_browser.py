@@ -2,25 +2,25 @@ import socket
 import ssl
 
 """
-Sockets : Combining Application, Presentation, Session layer (7,6,5) 
+Sockets : Combining Application, Presentation, Session layer (7,6,5)
 Sockets allow bidirectional communication between application processes over an IP based network.
-Not just inter-server communication, its more granular, inter-process communication across a network. 
+Not just inter-server communication, its more granular, inter-process communication across a network.
 Inter-server would be from IP-IP, whereas inter-process is IP:port-Ip:port
 Recall ports are just different endpoints on a server that independently send and recieve traffic.
 
-Sockets let us consider two processes as being in direct communication with each other even though they are separated 
-by many nodes across the internet. 
+Sockets let us consider two processes as being in direct communication with each other even though they are separated
+by many nodes across the internet.
 
 IP - Network Layer (3)
-Recall two distant nodes communicate using IP (internet protocol). 
-- routing algorithm is used to build a forwarding table on each node in the network. 
+Recall two distant nodes communicate using IP (internet protocol).
+- routing algorithm is used to build a forwarding table on each node in the network.
 - The forwarding tables map ip-ranges their neighboring nodes so they know where to best redirect messages.
 
 TCP - Transport Layer (4)
 The connection between source and dest in a socket is setup and torn down via TCP (which uses IP).
 - A 3-way handshake is performed to setup connection. (sync, syn-ack, ack)
-- 4 way disconnect is used to teardown connection (fin, finack, fin, finack ) 
-- or a hard TCP reset to quickly hangup without acks (reset) 
+- 4 way disconnect is used to teardown connection (fin, finack, fin, finack )
+- or a hard TCP reset to quickly hangup without acks (reset)
 
 DNS Resolution - Application Layer (7)
 Recall also that the host in a URL resolve to an IP address via a DNS lookup. It uses TCP and UDP both which use IP.
@@ -38,7 +38,7 @@ resolver sends www.example.com to .com server, which replies try example.com ser
 resolver sends www.example.com to example.com server, which replies try www.example.com server at zz.zz.zz.zz
 resolver sends www.example.com to www.example.com server which replies with 12.34.56.78
 The resolver then caches the domain ip address mapping and sends it to client.
-The caching makes request faster and reduces pressure on name servers. 
+The caching makes request faster and reduces pressure on name servers.
 But the cache can be poisoned creating a security vunerability
 
 DNS Iterative
@@ -49,7 +49,7 @@ Browsers :
 Browsers (a client) that uses a socket to make requests to servers for data. It can use different protocols.
 The browser needs a URL, so it can use different protocols to get documents from a domain.
 
-The resource being retrieved is represented as a URL (uniform resource locator) 
+The resource being retrieved is represented as a URL (uniform resource locator)
 http://     data.pr4e.org   /page.htm
 {protocol}  {domain}        {document}
 
@@ -100,4 +100,3 @@ if __name__ == '__main__':
     browser(host='data.pr4e.org', document='/page1.htm')
     browser(protocol='http', protocol_version='1.0', host='google.com', document='/')
     browser(protocol='https', protocol_version='1.1', host='google.com', document='/')
-
